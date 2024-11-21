@@ -2,6 +2,7 @@ package oo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Teacher extends Person{
     private List<Klass> klasses;
@@ -13,7 +14,15 @@ public class Teacher extends Person{
 
     @Override
     public String introduce() {
-        return String.format("%s I am a teacher.", super.introduce());
+        StringBuilder builder = new StringBuilder();
+        builder.append(String.format("%s I am a teacher.", super.introduce()));
+        String klassesAsString = klasses.stream().map(klass -> klass.getNumber().toString()).collect(Collectors.joining(", "));
+        if (!klassesAsString.isEmpty()) {
+            builder.append(" I teach Class ")
+                    .append(klassesAsString)
+                    .append(".");
+        }
+        return builder.toString();
     }
 
     public boolean belongsTo(Klass klass) {
