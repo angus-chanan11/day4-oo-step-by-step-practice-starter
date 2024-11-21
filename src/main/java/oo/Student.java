@@ -1,12 +1,13 @@
 package oo;
 
-public class Student extends Person{
+public class Student extends Person implements KlassObserver{
     private Klass klass;
     private static final String STUDENT_MESSAGE = "I am a student.";
     private static final String LEADER_MESSAGE = "I am the leader of class ";
     private static final String MESSAGE_END = ".";
     private static final String CLASS_MESSAGE = "I am in class ";
     private static final String SPACE = " ";
+    private static final String UPDATE_MESSAGE = "I am %s, student of Class %d. I know %s become Leader.";
 
     public Student(Integer id, String name, Integer age) {
         super(id, name, age);
@@ -42,5 +43,9 @@ public class Student extends Person{
 
     public String getName() {
         return name;
+    }
+
+    public void update(Klass klass) {
+        System.out.println(String.format(UPDATE_MESSAGE, name, klass.getNumber(), klass.getLeader().getName()));
     }
 }
