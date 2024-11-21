@@ -1,7 +1,7 @@
 package oo;
 
 public class Student extends Person{
-    public Student(Integer id, String name, int age) {
+    public Student(Integer id, String name, Integer age) {
         super(id, name, age);
     }
 

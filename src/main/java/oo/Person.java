@@ -5,9 +5,9 @@ import java.util.Objects;
 public class Person {
     private Integer id;
     protected String name;
-    protected int age;
+    protected Integer age;
 
-    public Person(Integer id, String name, int age) {
+    public Person(Integer id, String name, Integer age) {
         this.id = id;
         this.name = name;
         this.age = age;
