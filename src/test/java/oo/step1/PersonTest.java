@@ -23,20 +23,20 @@ public class PersonTest {
         assertThat(introduce).isEqualTo("My name is Jim. I am 19 years old.");
     }
 
-//    @Test
-//    public void should_return_true_when_equals_given_two_people_with_same_id() {
-//        Person person1 = new Person(1, "Tom", 18);
-//        Person person2 = new Person(1, "Tommy", 18);
-//
-//        assertThat(person1).isEqualTo(person2);
-//    }
-//
-//    @Test
-//    public void should_return_false_when_equals_given_two_people_with_different_id() {
-//        Person person1 = new Person(1, "Tom", 18);
-//        Person person2 = new Person(2, "Tom", 18);
-//
-//        assertThat(person1).isNotEqualTo(person2);
-//    }
+    @Test
+    public void should_return_true_when_equals_given_two_people_with_same_id() {
+        Person person1 = new Person(1, "Tom", 18);
+        Person person2 = new Person(1, "Tommy", 18);
+
+        assertThat(person1).isEqualTo(person2);
+    }
+
+    @Test
+    public void should_return_false_when_equals_given_two_people_with_different_id() {
+        Person person1 = new Person(1, "Tom", 18);
+        Person person2 = new Person(2, "Tom", 18);
+
+        assertThat(person1).isNotEqualTo(person2);
+    }
 
 }
