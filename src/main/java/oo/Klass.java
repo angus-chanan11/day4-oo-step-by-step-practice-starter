@@ -6,6 +6,8 @@ public class Klass {
     private Integer number;
     private Student leader;
 
+    private static final String ASSIGN_LEADER_ERROR = "It is not one of us.";
+
     public Klass(Integer number) {
         this.number = number;
     }
@@ -32,6 +34,11 @@ public class Klass {
     }
 
     public void assignLeader(Student student) {
-        this.leader = student;
+        if (student.isIn(this)) {
+            this.leader = student;
+        }
+        else {
+            System.out.println(ASSIGN_LEADER_ERROR);
+        }
     }
 }
