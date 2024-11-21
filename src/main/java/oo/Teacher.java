@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Teacher extends Person implements KlassObserver {
-    public static final String UPDATE_MESSAGE = "I am %s, teacher of Class %d. I know %s become Leader.";
+    private static final String UPDATE_MESSAGE = "I am %s, teacher of Class %d. I know %s become Leader.";
     private List<Klass> klasses;
     private static final String TEACHER_MESSAGE = " I am a teacher.";
     private static final String KLASS_SEPARATOR = ", ";
