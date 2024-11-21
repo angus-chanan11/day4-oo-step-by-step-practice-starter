@@ -30,4 +30,8 @@ public class Klass {
     public boolean isLeader(Student student) {
         return leader != null && leader.equals(student);
     }
+
+    public void assignLeader(Student student) {
+        this.leader = student;
+    }
 }
