@@ -9,7 +9,12 @@ public class Student extends Person{
 
     @Override
     public String introduce() {
-        return String.format("%s I am a student.", super.introduce());
+        StringBuilder builder = new StringBuilder();
+        builder.append(String.format("%s I am a student.", super.introduce()));
+        if (klass != null) {
+            builder.append(String.format(" I am in class %d.", klass.getNumber()));
+        }
+        return builder.toString();
     }
 
     public boolean isIn(Klass klass) {

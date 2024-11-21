@@ -21,4 +21,8 @@ public class Klass {
     public int hashCode() {
         return Objects.hash(number);
     }
+
+    public Integer getNumber() {
+        return number;
+    }
 }
