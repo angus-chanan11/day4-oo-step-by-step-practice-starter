@@ -19,32 +19,32 @@ public class TeacherTest {
         assertThat(belongsTo).isFalse();
     }
 
-//    @Test
-//    public void should_return_true_when_belongsTo_given_teacher_teaches_in_the_class() {
-//        Teacher jerry = new Teacher(1, "Jerry", 21);
-//        Klass klass = new Klass(1);
-//        jerry.assignTo(klass);
-//
-//        boolean belongsTo = jerry.belongsTo(klass);
-//
-//        assertThat(belongsTo).isTrue();
-//    }
-//
-//    @Test
-//    public void should_all_return_true_when_belongsTo_given_teacher_teaches_multiple_classes() {
-//        Teacher jerry = new Teacher(1, "Jerry", 21);
-//        Klass klass1 = new Klass(1);
-//        Klass klass2 = new Klass(2);
-//        jerry.assignTo(klass1);
-//        jerry.assignTo(klass2);
-//
-//        boolean belongsToKlass1 = jerry.belongsTo(klass1);
-//        boolean belongsToKlass2 = jerry.belongsTo(klass2);
-//
-//        assertThat(belongsToKlass1).isTrue();
-//        assertThat(belongsToKlass2).isTrue();
-//    }
-//
+    @Test
+    public void should_return_true_when_belongsTo_given_teacher_teaches_in_the_class() {
+        Teacher jerry = new Teacher(1, "Jerry", 21);
+        Klass klass = new Klass(1);
+        jerry.assignTo(klass);
+
+        boolean belongsTo = jerry.belongsTo(klass);
+
+        assertThat(belongsTo).isTrue();
+    }
+
+    @Test
+    public void should_all_return_true_when_belongsTo_given_teacher_teaches_multiple_classes() {
+        Teacher jerry = new Teacher(1, "Jerry", 21);
+        Klass klass1 = new Klass(1);
+        Klass klass2 = new Klass(2);
+        jerry.assignTo(klass1);
+        jerry.assignTo(klass2);
+
+        boolean belongsToKlass1 = jerry.belongsTo(klass1);
+        boolean belongsToKlass2 = jerry.belongsTo(klass2);
+
+        assertThat(belongsToKlass1).isTrue();
+        assertThat(belongsToKlass2).isTrue();
+    }
+
 //    @Test
 //    public void should_return_message_with_name_age_and_class_when_introduce_given_teacher_teaches_one_class() {
 //        Teacher jerry = new Teacher(1, "Jerry", 21);
