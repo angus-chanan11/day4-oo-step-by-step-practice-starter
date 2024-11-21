@@ -16,7 +16,9 @@ public class Teacher extends Person{
     public String introduce() {
         StringBuilder builder = new StringBuilder();
         builder.append(String.format("%s I am a teacher.", super.introduce()));
-        String klassesAsString = klasses.stream().map(klass -> klass.getNumber().toString()).collect(Collectors.joining(", "));
+        String klassesAsString = klasses.stream()
+                .map(klass -> klass.getNumber().toString())
+                .collect(Collectors.joining(", "));
         if (!klassesAsString.isEmpty()) {
             builder.append(" I teach Class ")
                     .append(klassesAsString)
