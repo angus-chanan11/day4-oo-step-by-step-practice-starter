@@ -2,7 +2,7 @@ package oo;
 
 import java.util.Objects;
 
-public class Person {
+public class Person implements KlassObserver {
     private Integer id;
     protected String name;
     protected Integer age;
@@ -29,4 +29,6 @@ public class Person {
     public int hashCode() {
         return Objects.hash(id);
     }
+
+    public void update(Klass klass) {}
 }

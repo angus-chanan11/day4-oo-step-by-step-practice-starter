@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Teacher extends Person{
+public class Teacher extends Person implements KlassObserver {
+    public static final String UPDATE_MESSAGE = "I am %s, teacher of Class %d. I know %s become Leader.";
     private List<Klass> klasses;
     private static final String TEACHER_MESSAGE = "I am a teacher.";
     private static final String KLASS_SEPARATOR = ", ";
@@ -42,5 +43,9 @@ public class Teacher extends Person{
     public boolean isTeaching(Student student) {
         return klasses.stream()
                 .anyMatch(klass -> klass.equals(student.getKlass()));
+    }
+
+    public void update(Klass klass) {
+        System.out.println(String.format(UPDATE_MESSAGE, name, klass.getNumber(), klass.getLeader().getName()));
     }
 }

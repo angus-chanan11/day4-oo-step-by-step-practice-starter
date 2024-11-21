@@ -39,4 +39,8 @@ public class Student extends Person{
     public Klass getKlass() {
         return klass;
     }
+
+    public String getName() {
+        return name;
+    }
 }
