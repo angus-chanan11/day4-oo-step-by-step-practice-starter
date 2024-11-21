@@ -43,6 +43,7 @@ public class Student extends Person implements KlassObserver{
         return name;
     }
 
+    @Override
     public void update(Klass klass) {
         System.out.println(String.format(UPDATE_MESSAGE, name, klass.getNumber(), klass.getLeader().getName()));
     }
