@@ -7,11 +7,9 @@ import java.util.stream.Collectors;
 public class Teacher extends Person implements KlassObserver {
     public static final String UPDATE_MESSAGE = "I am %s, teacher of Class %d. I know %s become Leader.";
     private List<Klass> klasses;
-    private static final String TEACHER_MESSAGE = "I am a teacher.";
+    private static final String TEACHER_MESSAGE = " I am a teacher.";
     private static final String KLASS_SEPARATOR = ", ";
-    private static final String CLASS_MESSAGE = "I teach Class ";
-    private static final String CLASS_MESSAGE_END = ".";
-    private static final String SPACE = " ";
+    private static final String CLASS_MESSAGE = " I teach Class %s.";
 
     public Teacher(Integer id, String name, Integer age) {
         super(id, name, age);
@@ -21,12 +19,12 @@ public class Teacher extends Person implements KlassObserver {
     @Override
     public String introduce() {
         StringBuilder builder = new StringBuilder();
-        builder.append(String.format("%s%s%s", super.introduce(), SPACE, TEACHER_MESSAGE));
+        builder.append(String.format("%s%s", super.introduce(), TEACHER_MESSAGE));
         String klassesAsString = klasses.stream()
                 .map(klass -> klass.getNumber().toString())
                 .collect(Collectors.joining(KLASS_SEPARATOR));
         if (!klassesAsString.isEmpty()) {
-            builder.append(String.format("%s%s%s%s", SPACE, CLASS_MESSAGE, klassesAsString, CLASS_MESSAGE_END));
+            builder.append(String.format(CLASS_MESSAGE, klassesAsString));
         }
         return builder.toString();
     }
