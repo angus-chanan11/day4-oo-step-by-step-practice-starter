@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 public class Teacher extends Person{
     private List<Klass> klasses;
     private static final String TEACHER_MESSAGE = "I am a teacher.";
+    private static final String KLASS_SEPARATOR = ", ";
 
     public Teacher(Integer id, String name, Integer age) {
         super(id, name, age);
@@ -19,7 +20,7 @@ public class Teacher extends Person{
         builder.append(String.format("%s %s", super.introduce(), TEACHER_MESSAGE));
         String klassesAsString = klasses.stream()
                 .map(klass -> klass.getNumber().toString())
-                .collect(Collectors.joining(", "));
+                .collect(Collectors.joining(KLASS_SEPARATOR));
         if (!klassesAsString.isEmpty()) {
             builder.append(" I teach Class ")
                     .append(klassesAsString)
