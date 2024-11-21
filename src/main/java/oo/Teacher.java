@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 public class Teacher extends Person{
     private List<Klass> klasses;
+    private static final String TEACHER_MESSAGE = "I am a teacher.";
 
     public Teacher(Integer id, String name, Integer age) {
         super(id, name, age);
@@ -15,7 +16,7 @@ public class Teacher extends Person{
     @Override
     public String introduce() {
         StringBuilder builder = new StringBuilder();
-        builder.append(String.format("%s I am a teacher.", super.introduce()));
+        builder.append(String.format("%s %s", super.introduce(), TEACHER_MESSAGE));
         String klassesAsString = klasses.stream()
                 .map(klass -> klass.getNumber().toString())
                 .collect(Collectors.joining(", "));
