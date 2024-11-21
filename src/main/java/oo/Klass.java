@@ -4,6 +4,7 @@ import java.util.Objects;
 
 public class Klass {
     private Integer number;
+    private Student leader;
 
     public Klass(Integer number) {
         this.number = number;
@@ -24,5 +25,9 @@ public class Klass {
 
     public Integer getNumber() {
         return number;
+    }
+
+    public boolean isLeader(Student student) {
+        return leader != null && leader.equals(student);
     }
 }
