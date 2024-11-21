@@ -6,6 +6,7 @@ public class Student extends Person{
     private static final String LEADER_MESSAGE = "I am the leader of class ";
     private static final String MESSAGE_END = ".";
     private static final String CLASS_MESSAGE = "I am in class ";
+    private static final String SPACE = " ";
 
     public Student(Integer id, String name, Integer age) {
         super(id, name, age);
@@ -14,13 +15,13 @@ public class Student extends Person{
     @Override
     public String introduce() {
         StringBuilder builder = new StringBuilder();
-        builder.append(String.format("%s %s", super.introduce(), STUDENT_MESSAGE));
+        builder.append(String.format("%s%s%s", super.introduce(), SPACE, STUDENT_MESSAGE));
         if (klass != null) {
             Integer klassNumber = klass.getNumber();
             if (klass.isLeader(this)){
-                builder.append(String.format(" %s%d%s", LEADER_MESSAGE, klassNumber, MESSAGE_END));
+                builder.append(String.format("%s%s%d%s", SPACE, LEADER_MESSAGE, klassNumber, MESSAGE_END));
             } else {
-                builder.append(String.format(" %s%d%s", CLASS_MESSAGE, klassNumber, MESSAGE_END));
+                builder.append(String.format("%s%s%d%s", SPACE, CLASS_MESSAGE, klassNumber, MESSAGE_END));
             }
         }
         return builder.toString();
