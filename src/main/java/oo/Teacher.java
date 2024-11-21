@@ -9,6 +9,7 @@ public class Teacher extends Person{
     private static final String TEACHER_MESSAGE = "I am a teacher.";
     private static final String KLASS_SEPARATOR = ", ";
     private static final String CLASS_MESSAGE = "I teach Class ";
+    private static final String CLASS_MESSAGE_END = ".";
 
     public Teacher(Integer id, String name, Integer age) {
         super(id, name, age);
@@ -23,9 +24,7 @@ public class Teacher extends Person{
                 .map(klass -> klass.getNumber().toString())
                 .collect(Collectors.joining(KLASS_SEPARATOR));
         if (!klassesAsString.isEmpty()) {
-            builder.append(String.format(" %s", CLASS_MESSAGE))
-                    .append(klassesAsString)
-                    .append(".");
+            builder.append(String.format(" %s%s%s", CLASS_MESSAGE, klassesAsString, CLASS_MESSAGE_END));
         }
         return builder.toString();
     }
