@@ -8,14 +8,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class StudentTest {
 
-//    @Test
-//    public void should_return_false_when_isIn_given_student_has_joined_a_class() {
-//        Student tom = new Student(1, "Tom", 18);
-//        Klass klass = new Klass(1);
-//
-//        boolean isIn = tom.isIn(klass);
-//        assertThat(isIn).isFalse();
-//    }
+    @Test
+    public void should_return_false_when_isIn_given_student_has_joined_a_class() {
+        Student tom = new Student(1, "Tom", 18);
+        Klass klass = new Klass(1);
+
+        boolean isIn = tom.isIn(klass);
+        assertThat(isIn).isFalse();
+    }
 //
 //    @Test
 //    public void should_return_true_when_isIn_given_student_has_not_joined_a_class() {
