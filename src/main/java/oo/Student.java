@@ -2,6 +2,7 @@ package oo;
 
 public class Student extends Person{
     private Klass klass;
+    private static final String STUDENT_MESSAGE = "I am a student.";
     private static final String LEADER_MESSAGE = "I am the leader of class ";
     private static final String LEADER_MESSAGE_END = ".";
 
@@ -12,7 +13,7 @@ public class Student extends Person{
     @Override
     public String introduce() {
         StringBuilder builder = new StringBuilder();
-        builder.append(String.format("%s I am a student.", super.introduce()));
+        builder.append(String.format("%s %s", super.introduce(), STUDENT_MESSAGE));
         if (klass != null) {
             Integer klassNumber = klass.getNumber();
             if (klass.isLeader(this)){
