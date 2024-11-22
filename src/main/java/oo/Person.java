@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Person implements KlassObserver {
     private static final String INTRODUCE_MESSAGE = "My name is %s. I am %d years old.";
-    private Integer id;
+    protected Integer id;
     protected String name;
     protected Integer age;
 

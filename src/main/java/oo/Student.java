@@ -43,6 +43,13 @@ public class Student extends Person implements KlassObserver{
         return name;
     }
 
+    public boolean equals(Object anotherObject) {
+        if (anotherObject instanceof Student anotherStudent)
+            return id.equals(anotherStudent.id);
+        else
+            return false;
+    }
+
     @Override
     public void update(Klass klass) {
         System.out.println(String.format(UPDATE_MESSAGE, name, klass.getNumber(), klass.getLeader().getName()));
