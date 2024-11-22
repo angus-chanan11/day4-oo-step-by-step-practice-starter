@@ -43,6 +43,13 @@ public class Teacher extends Person implements KlassObserver {
                 .anyMatch(klass -> klass.equals(student.getKlass()));
     }
 
+    public boolean equals(Object anotherObject) {
+        if (anotherObject instanceof Teacher anotherTeacher)
+            return id.equals(anotherTeacher.id);
+        else
+            return false;
+    }
+
     @Override
     public void update(Klass klass) {
         System.out.println(String.format(UPDATE_MESSAGE, name, klass.getNumber(), klass.getLeader().getName()));
